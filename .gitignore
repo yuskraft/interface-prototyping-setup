@@ -1,0 +1,13 @@
+/node_modules
+/dist
+/build
+/coverage
+/docs
+/logs
+/tmp
+/cache
+/temp
+/backup
+/archive
+/old
+/deprecated
