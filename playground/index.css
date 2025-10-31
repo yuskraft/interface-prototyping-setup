@@ -1,0 +1,70 @@
+:root[data-theme='light'] {
+  --app-bg: #f5f7fa;
+  --app-text: #333333;
+  --app-header-bg: #ffffff;
+  --app-card-bg: #ffffff;
+  --app-border: #e0e0e0;
+  --app-shadow: rgba(0, 0, 0, 0.1);
+  
+  --grid-color: rgba(0, 0, 0, 0.03);
+  --grid-size: 24px;
+  
+  --feedback-bg: #ffffff;
+  --feedback-text: #333333;
+  --feedback-border: #e0e0e0;
+}
+
+:root[data-theme='dark'] {
+  --app-bg: #1a1a1a;
+  --app-text: #e0e0e0;
+  --app-header-bg: #2d2d2d;
+  --app-card-bg: #2d2d2d;
+  --app-border: #404040;
+  --app-shadow: rgba(0, 0, 0, 0.3);
+  
+  --grid-color: rgba(255, 255, 255, 0.03);
+  --grid-size: 24px;
+  
+  --feedback-bg: #2d2d2d;
+  --feedback-text: #e0e0e0;
+  --feedback-border: #404040;
+  --feedback-button-bg: #3a3a3a;
+  --feedback-button-hover-bg: #454545;
+  --feedback-button-text: #e0e0e0;
+  
+  --feedback-positive-bg: #1b3a1b;
+  --feedback-positive-hover: #2d5a2d;
+  --feedback-positive-text: #81c784;
+  
+  --feedback-negative-bg: #3a1b1b;
+  --feedback-negative-hover: #5a2d2d;
+  --feedback-negative-text: #e57373;
+  
+  --feedback-submit-bg: #1976d2;
+  --feedback-submit-hover: #1565c0;
+  --feedback-cancel-hover: #3a3a3a;
+  --feedback-cancel-text: #b0b0b0;
+  
+  --feedback-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --feedback-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: var(--app-bg);
+  color: var(--app-text);
+  transition: background 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  
+}
+
+#root {
+  min-height: 100vh;
+}
+
