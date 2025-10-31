@@ -67,7 +67,9 @@ export const Draggable = ({
       !target.closest("input") &&
       !target.closest("textarea") &&
       !target.closest("select") &&
-      !target.closest("a")
+      !target.closest("a") &&
+      !target.classList.contains("resize-handle") &&
+      !target.closest(".resize-handle")
     ) {
       setIsDragging(true);
       setDragStart({ x: e.clientX, y: e.clientY });

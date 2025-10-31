@@ -12,6 +12,8 @@ interface MediaFile {
   file: File;
   x: number;
   y: number;
+  width?: number;
+  height?: number;
 }
 
 function App() {
@@ -39,6 +41,14 @@ function App() {
 
   const handleMediaRemove = (id: string) => {
     setMediaFiles((prev) => prev.filter((media) => media.id !== id));
+  };
+
+  const handleMediaResize = (id: string, width: number, height: number) => {
+    setMediaFiles((prev) =>
+      prev.map((media) =>
+        media.id === id ? { ...media, width, height } : media
+      )
+    );
   };
 
   const handleFeedbackSubmit = (feedback: {
@@ -70,7 +80,12 @@ function App() {
           <Draggable key={media.id} initialX={media.x} initialY={media.y}>
             <MediaItem
               file={media.file}
+              initialWidth={media.width}
+              initialHeight={media.height}
               onRemove={() => handleMediaRemove(media.id)}
+              onResize={(width, height) =>
+                handleMediaResize(media.id, width, height)
+              }
             />
           </Draggable>
         ))}
