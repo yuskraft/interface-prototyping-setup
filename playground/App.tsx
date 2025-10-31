@@ -1,12 +1,22 @@
 import { useState, useEffect } from "react";
 import { Feedback } from "@/components/Feedback";
 import { Draggable } from "./Draggable";
+import { ConfigPanel } from "./ConfigPanel";
+import { MediaItem } from "./MediaItem";
 import "./App.css";
 
 type Theme = "light" | "dark";
 
+interface MediaFile {
+  id: string;
+  file: File;
+  x: number;
+  y: number;
+}
+
 function App() {
   const [theme, setTheme] = useState<Theme>("light");
+  const [mediaFiles, setMediaFiles] = useState<MediaFile[]>([]);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -14,6 +24,21 @@ function App() {
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
+  const handleMediaUpload = (files: File[]) => {
+    const newMediaFiles = files.map((file, index) => ({
+      id: `${Date.now()}-${index}`,
+      file,
+      x: 100 + index * 50,
+      y: 100 + index * 50,
+    }));
+
+    setMediaFiles((prev) => [...prev, ...newMediaFiles]);
+  };
+
+  const handleMediaRemove = (id: string) => {
+    setMediaFiles((prev) => prev.filter((media) => media.id !== id));
   };
 
   const handleFeedbackSubmit = (feedback: {
@@ -30,17 +55,25 @@ function App() {
 
   return (
     <div className="playground">
-      <button
-        className="theme-toggle"
-        onClick={toggleTheme}
-        aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-      >
-        {theme === "light" ? "Dark" : "Light"} Mode
-      </button>
+      <ConfigPanel
+        theme={theme}
+        onThemeToggle={toggleTheme}
+        onMediaUpload={handleMediaUpload}
+      />
+
       <div className="playground-content">
         <Draggable initialX={0} initialY={0}>
           <Feedback onSubmit={handleFeedbackSubmit} />
         </Draggable>
+
+        {mediaFiles.map((media) => (
+          <Draggable key={media.id} initialX={media.x} initialY={media.y}>
+            <MediaItem
+              file={media.file}
+              onRemove={() => handleMediaRemove(media.id)}
+            />
+          </Draggable>
+        ))}
       </div>
     </div>
   );

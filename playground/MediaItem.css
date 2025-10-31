@@ -1,0 +1,65 @@
+.media-item {
+  background: var(--feedback-bg);
+  border: 1px solid var(--app-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--app-shadow);
+  position: relative;
+  max-width: 400px;
+  transition: all 0.2s ease;
+}
+
+.media-item:hover .media-remove-button {
+    opacity: 1;
+    pointer-events: auto; 
+}
+
+.media-remove-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: black;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+  padding: 0;
+  opacity: 0; 
+  pointer-events: none; 
+}
+
+.media-remove-button:hover {
+  transform: scale(1.1);
+}
+
+.media-content {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+  background: var(--app-bg);
+}
+
+.media-info {
+  padding: 12px;
+  background: var(--feedback-bg);
+  border-top: 1px solid var(--app-border);
+}
+
+:root[data-theme='dark'] .media-item {
+  background: var(--feedback-bg);
+}
+
+:root[data-theme='dark'] .media-content {
+  background: #1a1a1a;
+}
+

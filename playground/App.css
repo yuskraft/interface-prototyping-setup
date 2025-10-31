@@ -13,40 +13,6 @@
   background: rgba(45, 45, 45, 0.8);
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--app-border);
-  border-radius: 8px;
-  color: var(--app-text);
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 1000;
-  box-shadow: 0 2px 12px var(--app-shadow);
-}
-
-:root[data-theme='dark'] .theme-toggle {
-  background: rgba(45, 45, 45, 0.95);
-}
-
-.theme-toggle:hover {
-  background-color: rgb(0, 0, 0);
-  color: white;
-  border-color: rgb(0, 0, 0);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px var(--app-shadow);
-}
-
 .playground-content {
   height: 100vh;
   width: 100%;
@@ -59,28 +25,19 @@
 .draggable-wrapper {
   position: absolute;
   user-select: none;
-  transition: box-shadow 0.2s ease, filter 0.2s ease;
   will-change: transform;
 }
 
 .draggable-wrapper::after {
   content: "";
-  top: -40px;
-  left: -40px;
-  right: -40px;
-  bottom: -40px;
+  top: -30px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
   position: absolute;
   z-index: -1;
+  cursor:grab;
 }
-
-.draggable-wrapper:hover::after {
-  opacity: 1;
-}
-
-.draggable-wrapper:hover {
-  filter: brightness(1.02);
-}
-
 
 .draggable-wrapper.dragging {
   z-index: 100;
