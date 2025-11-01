@@ -19,10 +19,15 @@ interface MediaFile {
 function App() {
   const [theme, setTheme] = useState<Theme>("light");
   const [mediaFiles, setMediaFiles] = useState<MediaFile[]>([]);
+  const [gridSize, setGridSize] = useState(24);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty("--grid-size", `${gridSize}px`);
+  }, [gridSize]);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
@@ -67,8 +72,10 @@ function App() {
     <div className="playground">
       <ConfigPanel
         theme={theme}
+        gridSize={gridSize}
         onThemeToggle={toggleTheme}
         onMediaUpload={handleMediaUpload}
+        onGridSizeChange={setGridSize}
       />
 
       <div className="playground-content">
