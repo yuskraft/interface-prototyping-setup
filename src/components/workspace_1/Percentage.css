@@ -1,0 +1,40 @@
+:root {
+  --percentage-square-size: 30px;
+  --percentage-square-gap: 8px;
+  --percentage-square-list-padding: 24px;
+  --percentage-square-color: #454545;
+  --percentage-square-hover-color: #c35f5f;
+  --percentage-square-list-bg-color: #e0e0e0;
+  --percentage-square-border-radius: 5px;
+}
+
+.percentage-container {
+  width: var(--percentage-square-size);
+  height: var(--percentage-square-size);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--percentage-square-gap);
+}
+
+.percentage-square-list {
+  display: flex;
+  flex-direction: row;
+  gap: var(--percentage-square-gap);
+  padding: var(--percentage-square-gap);
+  background-color: var(--percentage-square-list-bg-color);
+  border-radius: var(--percentage-square-border-radius);
+}
+
+.percentage-square-item {
+  width: var(--percentage-square-size);
+  height: var(--percentage-square-size);
+  background-color: var(--percentage-square-color);
+  border-radius: var(--percentage-square-border-radius);
+}
+
+.percentage-square-item:hover {
+  background-color: var(--percentage-square-hover-color);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}

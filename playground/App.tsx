@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Feedback } from "@/components/Feedback";
 import { Draggable } from "./Draggable";
 import { ConfigPanel } from "./ConfigPanel";
 import { MediaItem } from "./MediaItem";
@@ -85,7 +84,7 @@ function App() {
         </Draggable> */}
 
         <Draggable initialX={0} initialY={0}>
-          <Percentage />
+          <Percentage title="Percentage" />
         </Draggable>
 
         {mediaFiles.map((media) => (
