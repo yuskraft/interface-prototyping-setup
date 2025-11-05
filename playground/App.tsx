@@ -4,6 +4,7 @@ import { Draggable } from "./Draggable";
 import { ConfigPanel } from "./ConfigPanel";
 import { MediaItem } from "./MediaItem";
 import "./App.css";
+import { Percentage } from "@/components/workspace_1";
 
 type Theme = "light" | "dark";
 
@@ -79,8 +80,12 @@ function App() {
       />
 
       <div className="playground-content">
-        <Draggable initialX={0} initialY={0}>
+        {/* <Draggable initialX={0} initialY={0}>
           <Feedback onSubmit={handleFeedbackSubmit} />
+        </Draggable> */}
+
+        <Draggable initialX={0} initialY={0}>
+          <Percentage />
         </Draggable>
 
         {mediaFiles.map((media) => (
