@@ -79,10 +79,6 @@ function App() {
       />
 
       <div className="playground-content">
-        {/* <Draggable initialX={0} initialY={0}>
-          <Feedback onSubmit={handleFeedbackSubmit} />
-        </Draggable> */}
-
         <Draggable initialX={0} initialY={0}>
           <Percentage title="Percentage" />
         </Draggable>
