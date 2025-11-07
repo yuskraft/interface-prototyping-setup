@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root[data-theme='light'] {
   --app-bg: #f5f7fa;
   --app-text: #333333;
@@ -24,36 +26,16 @@
   
   --grid-color: rgba(255, 255, 255, 0.03);
   --grid-size: 24px;
-  
-  --feedback-bg: #2d2d2d;
-  --feedback-text: #e0e0e0;
-  --feedback-border: #404040;
-  --feedback-button-bg: #3a3a3a;
-  --feedback-button-hover-bg: #454545;
-  --feedback-button-text: #e0e0e0;
-  
-  --feedback-positive-bg: #1b3a1b;
-  --feedback-positive-hover: #2d5a2d;
-  --feedback-positive-text: #81c784;
-  
-  --feedback-negative-bg: #3a1b1b;
-  --feedback-negative-hover: #5a2d2d;
-  --feedback-negative-text: #e57373;
-  
-  --feedback-submit-bg: #1976d2;
-  --feedback-submit-hover: #1565c0;
-  --feedback-cancel-hover: #3a3a3a;
-  --feedback-cancel-text: #b0b0b0;
-  
-  --feedback-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --feedback-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
+  }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  @layer base {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+  }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;

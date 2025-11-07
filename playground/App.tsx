@@ -3,7 +3,7 @@ import { Draggable } from "./Draggable";
 import { ConfigPanel } from "./ConfigPanel";
 import { MediaItem } from "./MediaItem";
 import "./App.css";
-import { ExamplePrototype1 } from "@/workspaces/workspace_1";
+import { ExamplePrototype1, ExamplePrototype2 } from "@/workspaces/workspace_1";
 
 type Theme = "light" | "dark";
 
@@ -83,6 +83,9 @@ function App() {
           <ExamplePrototype1 />
         </Draggable>
 
+        <Draggable initialX={0} initialY={0}>
+          <ExamplePrototype2 />
+        </Draggable>
         {mediaFiles.map((media) => (
           <Draggable key={media.id} initialX={media.x} initialY={media.y}>
             <MediaItem
