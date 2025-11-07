@@ -1,1 +1,1 @@
-export * from "./components";
+export * from "./workspaces/workspace_1";

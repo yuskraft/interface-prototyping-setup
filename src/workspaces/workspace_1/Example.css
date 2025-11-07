@@ -1,5 +1,5 @@
 :root {
-  --percentage-square-size: 30px;
+  --percentage-square-size: 40px;
   --percentage-square-gap: 8px;
   --percentage-square-list-padding: 24px;
   --percentage-square-color: #454545;
@@ -12,9 +12,15 @@
   width: var(--percentage-square-size);
   height: var(--percentage-square-size);
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--percentage-square-gap);
+  width: 50%;
+  border: 1px solid var(--percentage-square-color);
+  border-radius: var(--percentage-square-border-radius);
+  padding: var(--percentage-square-gap);
+  height: 100%;
+  padding: 20px;
+  background-color: var(--percentage-square-list-bg-color);
 }
 
 .percentage-square-list {
@@ -37,4 +43,38 @@
   background-color: var(--percentage-square-hover-color);
   cursor: pointer;
   transition: all 0.1s ease-in-out;
+}
+
+.percentage-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--percentage-square-color);
+  background-color: #c35f5f;
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+}
+
+.percentage-square-item-button {
+  padding: 12px 16px;
+  border-radius: 4px;
+  color: white;
+  background-color: #1976d2;
+  border: none;
+  cursor: pointer;
+}
+
+.percentage-square-item-button:hover {
+  background-color: #1565c0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.percentage-description  {
+  color: var(--percentage-square-color);
+  text-align: center;
+  line-height: 1;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
